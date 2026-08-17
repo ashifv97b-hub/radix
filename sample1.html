@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Radix Technology — IT solutions partner in the UAE." />
+    <title>Radix Technology | IT Solutions</title>
+    <style>
+      :root {
+        /* Derived from the Radix brand's teal mark, with a deep navy anchor. */
+        --brand: #37f925;
+        --brand-dark: #29e935;
+        --brand-soft: #f2f6f3;
+        --navy: #f7f8f9;
+        --ink: #09f430;
+        --muted: #22e255;
+        --surface: #090000;
+        --canvas: #f3f7f7;
+        --line: #dce8e9;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      .page {
+        width: min(100%, 900px);
+        min-height: 100vh;
+        margin: 0 auto;
+        background: var(--surface);
+        box-shadow: 0 16px 50px rgba(16, 44, 59, .09);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 52px 48px 48px;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(125deg, var(--navy) 0%, var(--brand-dark) 52%, var(--brand) 100%);
+      }
+      .hero::after {
+        position: absolute;
+        right: -110px;
+        bottom: -160px;
+        width: 360px;
+        height: 360px;
+        border: 56px solid rgba(50, 239, 94, 0.858);
+        border-radius: 50%;
+        content: "";
+      }
+      .hero-inner { position: relative; z-index: 1; }
+      .logo {
+        display: block;
+        width: 112px;
+        height: 112px;
+        margin: 0 auto 22px;
+        padding: 9px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 28px rgba(0, 24, 32, .28);
+      }
+      h1 {
+        max-width: 650px;
+        margin: 0 auto;
+        font-size: clamp(1.8rem, 4.4vw, 2.65rem);
+        font-weight: 750;
+        letter-spacing: -.035em;
+        line-height: 1.15;
+      }
+      .tagline { max-width: 490px; margin: 15px auto 0; font-size: 1.06rem; color: rgba(255,255,255,.88); }
+      .content { padding: 42px 48px; }
+      .eyebrow { margin: 0 0 8px; color: var(--brand); font-size: .76rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+      h2 { margin: 0; color: var(--navy); font-size: 1.3rem; letter-spacing: -.018em; line-height: 1.25; }
+      .intro { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 30px; }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 11px 19px;
+        color: #fff;
+        background: var(--brand);
+        border-radius: 8px;
+        box-shadow: 0 6px 14px rgba(7, 139, 140, .22);
+        font-size: .94rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background .2s ease, transform .2s ease;
+      }
+      .cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+      .services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+      .services li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        min-height: 68px;
+        padding: 16px;
+        background: #fbfdfd;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font-size: .94rem;
+        font-weight: 650;
+        line-height: 1.35;
+      }
+      .services li::before { flex: 0 0 auto; width: 8px; height: 8px; margin-top: .34em; background: var(--brand); border-radius: 50%; content: ""; }
+      .block { padding: 32px 0; border-top: 1px solid var(--line); }
+      .block > p:last-child { max-width: 650px; margin: 12px 0 0; color: var(--muted); }
+      .hours { display: grid; grid-template-columns: 110px 1fr; gap: 8px 18px; margin: 14px 0 0; }
+      .hours dt { color: var(--ink); font-weight: 700; } .hours dd { margin: 0; color: var(--muted); }
+      .details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      address { margin-top: 12px; color: var(--muted); font-style: normal; }
+      .contact { display: grid; gap: 8px; margin-top: 12px; }
+      .contact span { color: var(--ink); font-weight: 700; }
+      a { color: var(--brand-dark); } .contact a { overflow-wrap: anywhere; font-weight: 600; text-decoration: none; } .contact a:hover { text-decoration: underline; }
+      .socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+      .socials a { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 9px 15px; border: 1px solid #a8d8d7; border-radius: 7px; background: var(--brand-soft); color: var(--brand-dark); font-size: .92rem; font-weight: 750; text-decoration: none; }
+      .socials a:hover { background: #d7efed; }
+      footer { padding: 24px 48px; background: #edf5f5; color: var(--muted); font-size: .84rem; text-align: center; }
+      @media (max-width: 620px) {
+        .hero { padding: 38px 22px 36px; }
+        .logo { width: 92px; height: 92px; margin-bottom: 18px; border-radius: 13px; }
+        .tagline { font-size: .98rem; }
+        .content { padding: 30px 20px; }
+        .intro { grid-template-columns: 1fr; gap: 18px; align-items: start; }
+        .intro .cta { width: 100%; }
+        .services { grid-template-columns: 1fr; gap: 9px; }
+        .services li { min-height: 0; padding: 14px; }
+        .block { padding: 27px 0; }
+        .details { grid-template-columns: 1fr; gap: 0; }
+        .details .block + .block { border-top: 1px solid var(--line); }
+        footer { padding: 21px 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <img class="logo" src="https://cdn.qrcodecreator.com/uploaded_files/6319311/gTG8fjtNIxdkSXwBLCdDecZjPBgihlnJmym9NXep.png" alt="Radix Technology logo" />
+          <h1>Radix Technology Sole Proprietorship LLC</h1>
+          <p class="tagline">Your trusted IT solutions partner in the UAE</p>
+        </div>
+      </header>
+      <div class="content">
+        <section aria-labelledby="services-title">
+          <div class="intro"><div><p class="eyebrow">What we do</p><h2 id="services-title">Technology that keeps business moving</h2></div><a class="cta" href="https://www.radixtech.ae/" target="_blank" rel="noopener">Explore our services</a></div>
+          <ul class="services"><li>IT Support &amp; Management</li><li>Data Center Solutions</li><li>Business Email Solutions</li><li>Network Infrastructure Solutions</li><li>Cybersecurity Solutions</li><li>Data Protection &amp; Backup Solutions</li><li>Communication &amp; ELV Solutions</li></ul>
+        </section>
+        <section class="block" aria-labelledby="about-title"><p class="eyebrow">About Radix</p><h2 id="about-title">Reliable expertise, tailored to your business</h2><p>We are a leading technology company committed to delivering innovative and reliable IT solutions.</p></section>
+        <section class="block" aria-labelledby="hours-title"><p class="eyebrow">Availability</p><h2 id="hours-title">Opening hours</h2><dl class="hours"><dt>Monday–Saturday</dt><dd>09:00 AM – 06:00 PM</dd></dl></section>
+        <div class="details"><section class="block" aria-labelledby="location-title"><p class="eyebrow">Visit us</p><h2 id="location-title">Location</h2><address>Hamdan Bin Mohammed Street<br>Abu Dhabi, Abu Dhabi 28358<br>United Arab Emirates</address></section><section class="block" aria-labelledby="contact-title"><p class="eyebrow">Get in touch</p><h2 id="contact-title">Contact</h2><div class="contact"><span>Anchal K</span><a href="tel:+971541291009">+971 54 129 1009</a><a href="mailto:anchal@radixtech.ae">anchal@radixtech.ae</a><a href="https://www.radixtech.ae/" target="_blank" rel="noopener">www.radixtech.ae</a></div></section></div>
+        <section class="block" aria-labelledby="social-title"><p class="eyebrow">Connect</p><h2 id="social-title">Follow Radix Technology</h2><div class="socials"><a href="https://www.linkedin.com/company/radix-technology-l-l-c/" target="_blank" rel="noopener">LinkedIn</a><a href="https://wa.me/971528341535" target="_blank" rel="noopener">WhatsApp</a></div></section>
+      </div>
+      <footer>© Radix Technology Sole Proprietorship LLC</footer>
+    </main>
+  </body>
+</html>
